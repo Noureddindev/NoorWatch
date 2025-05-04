@@ -1,57 +1,75 @@
 ```markdown
-# NoorWatch
+# NoorWatch.py
 
-## 📂 Folder Activity Monitor  
-**NoorWatch** is a lightweight tool that monitors folder activity in real-time. Developed by **ASKAL NOUREDDIN**, it provides instant logging of file modifications, creations, deletions, and movements.
+## 👋 Welcome  
+Hello! I'm **ASKAL NOUREDDIN**, the developer behind **NoorWatch.py**—a lightweight and efficient file monitoring tool designed for real-time directory activity tracking.  
 
----
+This script enables you to track changes in any folder, detecting file **creation, deletion, modification, and movement**, while providing instant logging and colorful terminal output.  
 
-## 🚀 Features
-- **Real-time Monitoring**: Detect changes in folders instantly.
-- **Logging System**: Stores all events in a log file.
-- **Colored Alerts**: Uses `colorama` for enhanced visibility in the terminal.
-- **Easy to Use**: Just specify the folder path and start monitoring.
+> 🚨 **DISCLAIMER:** This tool is strictly intended for **educational and authorized purposes**. I am **not responsible** for any **illegal or unethical** usage.
 
 ---
 
-## 🛠️ Installation  
-Make sure you have Python installed, then install dependencies using:
+## 📌 Features  
+✔ **Real-time Directory Monitoring** – Automatically detects file activities.  
+✔ **Event Tracking** – Monitors file **creation, deletion, modification, and movement**.  
+✔ **Log System** – Saves changes to a `log.txt` file for reference.  
+✔ **Color-coded Terminal Output** – Enhances visibility using `colorama`.  
+✔ **Multi-platform Support** – Works seamlessly on **Linux, Windows, and Termux**.  
 
+---
+
+## 🛠 Installation  
+
+### **For Linux & Windows**  
 ```bash
-pip install watchdog colorama
+git clone https://github.com/Noureddindev/NoorWatch.git
+cd NoorWatch
+pip install -r requirements.txt
+python3 noorwatch.py
+```
+
+*For Termux  *
+```bash
+pkg update && pkg upgrade
+pkg install python git
+git clone https://github.com/Noureddindev/NoorWatch.git
+cd NoorWatch
+pip install -r requirements.txt
+python noorwatch.py
 ```
 
 ---
 
-*🔧 Usage  *
-1. Run the script and enter the *full path* of the folder to monitor.
-2. The program will track changes and log them automatically.
-3. Press *Ctrl+C* to stop monitoring.
+*⚡ Usage  *
 
+To start monitoring a folder:  
 ```bash
-python NoorWatch.py
+python noorwatch.py
+```
+📂 When prompted, enter the *full path* of the folder you wish to monitor.  
+📜 Changes will be displayed in the terminal and logged into *log.txt* .
+
+---
+
+*📝 Example Output  *
+```bash
+[Created] /home/user/Projects/new_script.py
+[Modified] /home/user/Docs/README.md
+[Deleted] /home/user/Temp/test.log
+[Moved] from /home/user/Old/file.txt to /home/user/New/file.txt
 ```
 
 ---
 
-*📝 Example Log Output  *
-```bash
-Tue Apr 6 11:54:03 2025 - [Modified] C:/Projects/test.txt
-Tue Apr 6 11:55:10 2025 - [Created] C:/Projects/new_file.txt
-Tue Apr 6 11:56:45 2025 - [Deleted] C:/Projects/old_file.txt
-```
+*🤝 Contributions  *
+
+Contributions are welcome! Feel free to submit *Pull Requests* or report any issues.  
+Let's collaborate to make *NoorWatch* even better!  
+
+🛠 *Developer:* [ASKAL NOUREDDIN](https://github.com/Noureddindev)  
 
 ---
 
 *📜 License  *
-This project is open-source and available under the *MIT License* .
-
----
-
-*📧 Contact  *
-For inquiries or improvements, reach out to *ASKAL NOUREDDIN* .
-
----
-
-Let me know if you need any adjustments or additional details! 🚀😊
-```
+This project is *open-source* and available under the *MIT License* .
