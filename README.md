@@ -5,7 +5,7 @@ Hello World, I'm ASKAL 👋
 
 Welcome to the official repository for *NoorWatch.py*, a lightweight real-time *folder and file activity monitoring* tool. This script allows you to track any changes in a target directory — such as file creation, deletion, modification, and movement — with live logs and clear colored output.
 
-🚨 *DISCLAIMER:* I take *NO responsibility* for any *illegal or unethical* use of this script. It is meant for *educational and authorized purposes ONLY*.
+#🚨 *DISCLAIMER:* I take *NO responsibility* for any *illegal or unethical* use of this script. It is meant for *educational and authorized purposes ONLY*.
 
 ---
 
