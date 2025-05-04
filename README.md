@@ -1,7 +1,3 @@
-Here is your *README.md* for the `NoorWatch.py` tool, written in *professional English*, with clear structure and bold formatting suitable for GitHub display:
-
----
-
 ```markdown
 NoorWatch.py
 
