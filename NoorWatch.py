@@ -7,7 +7,7 @@ from colorama import init, Fore
 init()
 
 def print_banner():
-    banner = f"""{Fore.GREEN}
+    banner = r"""{Fore.GREEN}
   _   _                 _        _         _     
  | \ | | ___ _ _ __  __| | ___  | |_  ___ | |__  
  |  \| |/ _ \ '_ ` _ \/ _` |/ _ \| __|/ _ \| '_ \ 
@@ -20,8 +20,11 @@ def print_banner():
     print(banner)
 
 def log_event(message):
-    with open("log.txt", "a", encoding="utf-8") as log_file:
-        log_file.write(f"{time.ctime()} - {message}\n")
+    try:
+        with open("log.txt", "a", encoding="utf-8") as log_file:
+            log_file.write(f"{time.ctime()} - {message}\n")
+    except IOError:
+        print(Fore.RED + "Error: Cannot write to log file. Check permissions." + Fore.RESET)
 
 class WatcherHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -45,6 +48,10 @@ class WatcherHandler(FileSystemEventHandler):
         log_event(message)
 
 def start_monitoring(path_to_watch):
+    if not os.access(path_to_watch, os.R_OK):
+        print(Fore.RED + "Error: Permission denied for this folder." + Fore.RESET)
+        return
+
     event_handler = WatcherHandler()
     observer = Observer()
     observer.schedule(event_handler, path=path_to_watch, recursive=True)
@@ -58,10 +65,9 @@ def start_monitoring(path_to_watch):
             time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
-        print("\nMonitoring stopped.")
+        print(Fore.RED + "\nMonitoring stopped by user." + Fore.RESET)
         log_event("Monitoring stopped by user.")
-
-    observer.join()
+        observer.join()
 
 if __name__ == "__main__":
     print_banner()
