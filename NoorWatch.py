@@ -6,26 +6,23 @@ from colorama import init, Fore
 
 init()
 
-Banner with developer credit
 def print_banner():
-    banner = f"""{Fore.CYAN}
- _   _                       _       _       _     
-| \ | | __  _ _ __   __ | |_ __| |_   | |__  
-|  \| |/ _ \| '_ ` _ \ / _ \| _/ _| '_ \  | '_ \ 
-| |\  | (_) | | | | | | (_) | || (__| | | | | | | |
-\_| \_/\__/|_| |_| |_|\__/ \_\__|_| |_| |_| |_|
+    banner = f"""{Fore.GREEN}
+  _   _                       _       _       _     
+ | \ | | __  _ _ __   __ | |_ __| |_   | |__  
+ |  \| |/ _ \| '_ ` _ \ / _ \| _/ _| '_ \  | '_ \ 
+ | |\  | (_) | | | | | | (_) | || (__| | | | | | | |
+ \_| \_/\__/|_| |_| |_|\__/ \_\__|_| |_| |_| |_|
 
-         Folder Activity Monitor - NoorWatch
-              Developed by ASKAL NOUREDDIN
+      Folder Activity Monitor - NoorWatch
+         Developed by ASKAL NOUREDDIN
 {Fore.RESET}"""
     print(banner)
 
-Logging utility
 def log_event(message):
     with open("log.txt", "a", encoding="utf-8") as log_file:
         log_file.write(f"{time.ctime()} - {message}\n")
 
-Handler for file system events
 class WatcherHandler(FileSystemEventHandler):
     def on_modified(self, event):
         message = f"[Modified] {event.src_path}"
@@ -34,7 +31,7 @@ class WatcherHandler(FileSystemEventHandler):
 
     def on_created(self, event):
         message = f"[Created] {event.src_path}"
-print(Fore.GREEN + message + Fore.RESET)
+        print(Fore.GREEN + message + Fore.RESET)
         log_event(message)
 
     def on_deleted(self, event):
@@ -47,7 +44,6 @@ print(Fore.GREEN + message + Fore.RESET)
         print(Fore.MAGENTA + message + Fore.RESET)
         log_event(message)
 
-Main function to start monitoring
 def start_monitoring(path_to_watch):
     event_handler = WatcherHandler()
     observer = Observer()
@@ -67,11 +63,11 @@ def start_monitoring(path_to_watch):
 
     observer.join()
 
-Entry point
-if _name_ == "_main_":
+if __name__ == "__main__":
     print_banner()
     folder = input("Enter full path to the folder you want to monitor: ").strip()
 
     if os.path.exists(folder):
         start_monitoring(folder)
-    else:print(Fore.RED + "Folder does not exist. Please check the path and try again." + Fore.RESET)
+    else:
+        print(Fore.RED + "Folder does not exist. Please check the path and try again." + Fore.RESET)
