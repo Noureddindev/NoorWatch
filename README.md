@@ -1,44 +1,39 @@
-Your script looks clean and should work correctly. Just ensure that `watchdog` and `colorama` are installed with:
-
-```bash
-pip install watchdog colorama
-```
-
-Now, here's your *README.md* file for *NoorWatch* , incorporating your GitHub username *@Noureddindev* and developer name *ASKAL NOUREDDIN* :
-
-```markdown
+ْ```markdown
 # NoorWatch
 
 ## 📂 Folder Activity Monitor  
-**NoorWatch** is a real-time file activity monitoring tool developed by **ASKAL NOUREDDIN**. It allows users to track changes in a specified folder, logging modifications, creations, deletions, and movements.
+**NoorWatch** is a real-time folder monitoring tool developed by **ASKAL NOUREDDIN**.  
+It tracks changes within a specified folder, detecting file **creation, modification, deletion, and movement**, while logging all events in `log.txt`.
 
 ---
 
 ## 🚀 Features  
-✔ **Real-time monitoring** of file changes.  
-✔ **Logs all events** to `log.txt`.  
-✔ **Color-coded terminal alerts** using `colorama`.  
-✔ **Supports Linux, Windows, and Termux** environments.  
+✔ **Real-time monitoring** of folder activity.  
+✔ **Logs all detected changes** in `log.txt`.  
+✔ **Color-coded notifications** using `colorama`.  
+✔ **Compatible with Linux, Windows, and Termux (Android).**  
+✔ **Lightweight and easy to use** without unnecessary complexity.  
 
 ---
 
 ## 🛠️ Installation  
 
-### **Linux & Windows**  
+### 🔹 **Linux & Windows**  
 ```bash
 git clone https://github.com/Noureddindev/NoorWatch.git
 cd NoorWatch
-pip install -r requirements.txt
+pip install watchdog colorama
 python3 NoorWatch.py
 ```
 
-*Termux  *
+*🔹 Termux (Android)  *
 ```bash
-pkg update && pkg upgrade
-pkg install python git
+pkg update && pkg upgrade -y
+pkg install python git -y
 git clone https://github.com/Noureddindev/NoorWatch.git
 cd NoorWatch
-pip install -r requirements.txt
+pip install watchdog colorama
+termux-setup-storage  # Grant file access permissions
 python NoorWatch.py
 ```
 
@@ -46,12 +41,15 @@ python NoorWatch.py
 
 *⚡ Usage  *
 
-To start monitoring a folder:  
+💡 *Run the program:*  
 ```bash
 python NoorWatch.py
 ```
-📂 Enter the *full path* of the folder to monitor when prompted.  
-📜 All changes will be displayed in the terminal and logged into *log.txt* .
+📂 Enter the *full path* of the folder when prompted, for example:  
+```bash
+/storage/emulated/0/Download
+```
+📜 All changes will be displayed in the terminal and logged in *log.txt* .
 
 ---
 
@@ -67,17 +65,10 @@ python NoorWatch.py
 
 *🤝 Contributions  *
 
-Contributions are welcome! Feel free to submit *Pull Requests* or report issues.  
-*GitHub:* [@Noureddindev](https://github.com/Noureddindev)  
+💡 Contributions are welcome! You can submit *Pull Requests* or report issues.  
+🔗 *GitHub:* [ASKAL](https://github.com/Noureddindev)  
 
 ---
 
 *📜 License  *
 This project is *open-source* and available under the *MIT License* .
-
----
-
-Let me know if you'd like modifications or additional sections! 🚀✨  
-```
-
-Your project is now well-documented and ready for GitHub. Let me know if you need further refinements!
